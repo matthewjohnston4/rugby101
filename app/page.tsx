@@ -1,65 +1,63 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
+import ViewPanel, {ContentType} from "./views";
 
 export default function Home() {
+  const [activeContent, setActiveContent] = useState<ContentType>('home');
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="main">
+      <h1>
+        <span className="titleSmallLines">
+          <span>Beginner's</span>
+          <span>Guide to</span>
+        </span>
+        <span className="titleBigLine">Rugby</span>
+      </h1>
+      <div className="layout">
+        <div className="intro">
+          <p>
+            Rugby is a game played between two <a className="panelLink" onClick={() => setActiveContent('teams')}>teams</a> of{" "}
+            <a className="panelLink" onClick={() => setActiveContent('teams')}>15 players</a>.
           </p>
+          <p>There are two periods of 40 minutes in each match.</p>
+          <p>Points are scored through:</p>
+          <ul>
+            <li>A try.</li>
+            <li>A conversion.</li>
+            <li>A goal kick.</li>
+          </ul>
+          <p>Players can run with the ball, pass it backwards, or kick it.</p>
+          <p>
+            Opposing players can tackle the ball carrier in an attempt to win
+            the ball.
+          </p>
+          <p>
+            Tackling attempts often result in a ruck - if the tackled player
+            goes to ground - and a maul - if the player retains the ball and is
+            off the ground.
+          </p>
+          <p>
+            If the ball passes either touchline, it is in touch, and play is
+            restarted with a lineout.
+          </p>
+          <p>
+            If the ball passes the dead ball lines, play is restarted with a
+            22-metre drop-out.
+          </p>
+          <p>A scrum is used to restart play after:</p>
+          <ul>
+            <li>The ball has been knocked on or passed forward.</li>
+            <li>An accidental offside.</li>
+            <li>The ball is stuck (called “going dead”) in a ruck or maul.</li>
+          </ul>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="viewer">
+          <ViewPanel activeContent={activeContent} setActiveContent={setActiveContent} />
         </div>
-      </main>
+      </div>
     </div>
   );
 }

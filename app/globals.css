@@ -1,8 +1,7 @@
-@import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #375238;
+  --foreground: #ecf3ed;
+  --accent: #ffdb6e;
 }
 
 @theme inline {
@@ -12,15 +11,227 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "franklin-gothic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: polymath, sans-serif;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--accent);
+}
+
+.panelLink {
+  cursor: pointer;
+}
+
+h1 {
+  display: flex;
+  flex-direction: row nowrap;
+  font-size: 5rem;
+  font-weight: 900;
+  gap: 0.5rem;
+  margin: 2rem 0;
+  text-transform: uppercase;
+}
+
+.titleSmallLines {
+  color: var(--accent);
+  display: flex;
+  flex-direction: column;
+  font-size: 85%;
+  text-align: right;
+  margin-top: 1.1rem;
+}
+
+.titleSmallLines span {
+  line-height: 0.9;
+}
+
+.titleBigLine {
+  font-size: 200%;
+  line-height: 1;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: flex-start;
+  padding: 2rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 4rem;
+  max-width: 1000px;
+}
+
+.intro {
+  font-size: 1.5rem;
+  flex: 1 1 100%;
+}
+
+.contentPanel h2 {
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.teamContent {
+  background: #568d58;
+  border: 5px solid var(--foreground);
+  border-radius: 2px;
+  padding: 2rem;
+}
+
+.pitch {
+  border: 1px solid #fff;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+  position: relative;
+}
+
+.pitch .segments {
+  fill: #6aa76a;
+  stroke: #ffffff;
+  stroke-width: 2px;
+}
+
+.pitch .markings {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2px;
+}
+
+.pitch .goalPosts circle {
+  stroke: #3e6482;
+  stroke-width: 10px;
+}
+
+.player {
+  cursor: pointer;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: #c2185b;
+  width: 20px;
+  height: 20px;
+}
+
+.playerBack {
+  background-color: #2970b6;
+}
+
+.player1 {
+  top: 2%;
+  left: 25%;
+}
+
+.player2 {
+  top: 2%;
+  left: calc(25% + 22px + 0.25rem);
+}
+
+.player3 {
+  top: 2%;
+  left: calc(25% + 2 * (22px + 0.25rem));
+}
+
+.player4 {
+  top: calc(2% + 18px + 0.25rem);
+  left: calc(25% + 13px);
+}
+
+.player5 {
+  top: calc(2% + 18px + 0.25rem);
+  left: calc(25% + 2 * (11px + 0.5rem));
+}
+
+.player6 {
+  top: calc(2% + 2 * (18px + 0.25rem));
+  left: calc(25%);
+}
+
+.player7 {
+  top: calc(2% + 2 * (18px + 0.25rem));
+  left: calc(25% + 2 * (22px + 0.25rem));
+}
+
+.player8 {
+  top: calc(2% + 2 * (16px + 0.5rem));
+  left: calc(25% + 22px + 0.25rem);
+}
+
+.player9 {
+  top: 35%;
+  left: 40%;
+}
+
+.player10 {
+  top: 40%;
+  left: 50%;
+}
+
+.player12 {
+  top: 45%;
+  left: 60%;
+}
+
+.player13 {
+  top: 50%;
+  left: 70%;
+}
+
+.player14 {
+  top: 55%;
+  left: 80%;
+}
+
+.player11 {
+  top: 55%;
+  left: 20%
+}
+
+.player15 {
+  top: 65%;
+  left: 50%;
+}
+
+.textForwards {
+  color: #991349;
+  font-weight: 400;
+}
+
+.textBacks {
+  color:#1a548d;
+  font-weight: 400;
+}
+
+.playerDescription {
+  border: 4px solid var(--accent);
+  padding: 2rem;
+}
+
+.playerDescription h3 {
+  color: var(--accent);
+  margin-top: 0;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  font-weight: 900;
 }
