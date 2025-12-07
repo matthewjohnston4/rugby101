@@ -2,25 +2,34 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import ViewPanel, {ContentType} from "./views";
+import ViewPanel, { ContentType } from "./views";
+import DeskOfM from "./svgs/deskofm";
 
 export default function Home() {
-  const [activeContent, setActiveContent] = useState<ContentType>('home');
+  const [activeContent, setActiveContent] = useState<ContentType>("home");
 
   return (
     <div className="main">
-      <h1>
-        <span className="titleSmallLines">
-          <span>Beginner's</span>
-          <span>Guide to</span>
-        </span>
-        <span className="titleBigLine">Rugby</span>
-      </h1>
+      <div className="titleIcon"><a href="https://deskofm.com" target="_blank" rel="noopener noreferrer"><DeskOfM /></a></div>
+      <div className="title">
+        <h1>
+          <span className="titleSmallLine">Beginner's Guide to</span>
+          <span className="titleBigLine">Rugby</span>
+        </h1>
+      </div>
+
       <div className="layout">
         <div className="intro">
           <p>
-            Rugby is a game played between two <a className="panelLink" onClick={() => setActiveContent('teams')}>teams</a> of{" "}
-            <a className="panelLink" onClick={() => setActiveContent('teams')}>15 players</a>.
+            Rugby is a game played between two{" "}
+            <a className="panelLink" onClick={() => setActiveContent("teams")}>
+              teams
+            </a>{" "}
+            of{" "}
+            <a className="panelLink" onClick={() => setActiveContent("teams")}>
+              15 players
+            </a>
+            .
           </p>
           <p>There are two periods of 40 minutes in each match.</p>
           <p>Points are scored through:</p>
@@ -55,7 +64,10 @@ export default function Home() {
           </ul>
         </div>
         <div className="viewer">
-          <ViewPanel activeContent={activeContent} setActiveContent={setActiveContent} />
+          <ViewPanel
+            activeContent={activeContent}
+            setActiveContent={setActiveContent}
+          />
         </div>
       </div>
     </div>
