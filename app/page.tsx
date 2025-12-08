@@ -10,7 +10,11 @@ export default function Home() {
 
   return (
     <div className="main">
-      <div className="titleIcon"><a href="https://deskofm.com" target="_blank" rel="noopener noreferrer"><DeskOfM /></a></div>
+      <div className="titleIcon">
+        <a href="https://deskofm.com" target="_blank" rel="noopener noreferrer">
+          <DeskOfM />
+        </a>
+      </div>
       <div className="title">
         <h1>
           <span className="titleSmallLine">Beginner's Guide to</span>
@@ -21,7 +25,11 @@ export default function Home() {
       <div className="layout">
         <div className="intro">
           <p>
-            Rugby is a game played on <a className="panelLink" onClick={() => setActiveContent("pitch")}>a pitch</a> between two{" "}
+            Rugby is a game played on{" "}
+            <a className="panelLink" onClick={() => setActiveContent("pitch")}>
+              a pitch
+            </a>{" "}
+            between two{" "}
             <a className="panelLink" onClick={() => setActiveContent("teams")}>
               teams
             </a>{" "}
@@ -31,37 +39,134 @@ export default function Home() {
             </a>
             .
           </p>
-          <p>There are two periods of 40 minutes in each match, separated by a halftime break of 10 minutes.</p>
+          <p>
+            There are two periods of 40 minutes in each match, separated by a
+            halftime break of 10 minutes.
+          </p>
           <p>Points are scored through:</p>
           <ul>
-            <li><a className="panelLink" onClick={() => setActiveContent("tries")}>Tries</a></li>
-            <li><a className="panelLink" onClick={() => setActiveContent("conversion")}>Conversion</a></li>
-            <li><a className="panelLink" onClick={() => setActiveContent("goalKicks")}>Goal kicks</a></li>
+            <li>
+              <a
+                className="panelLink"
+                onClick={() => setActiveContent("tries")}
+              >
+                Tries
+              </a>
+            </li>
+            <li>
+              <a
+                className="panelLink"
+                onClick={() => setActiveContent("conversion")}
+              >
+                Conversion
+              </a>
+            </li>
+            <li>
+              <a
+                className="panelLink"
+                onClick={() => setActiveContent("goalKicks")}
+              >
+                Goal kicks
+              </a>
+            </li>
           </ul>
-          <p>Players can run with the ball, pass it backwards, or kick it.</p>
           <p>
-            Opposing players can tackle the ball carrier in an attempt to win
-            the ball.
+            Players can hold and run with the ball, use their hands to pass it
+            backwards, or kick it in any direction.
           </p>
           <p>
-            Tackling attempts often result in a ruck - if the tackled player
-            goes to ground - and a maul - if the player retains the ball and is
-            off the ground.
+            Opposing players can tackle the ball carrier below the line of the
+            shoulders in an attempt to win the ball.
           </p>
           <p>
-            If the ball passes either touchline, it is in touch, and play is
-            restarted with a lineout.
+            Tackling attempts often result in a{" "}
+            <a className="panelLink" onClick={() => setActiveContent("ruck")}>
+              ruck
+            </a>{" "}
+            - where the tackled player goes to ground - and a{" "}
+            <a className="panelLink" onClick={() => setActiveContent("maul")}>
+              maul
+            </a>{" "}
+            - where the player retains the ball and is held up off the ground.
           </p>
           <p>
-            If the ball passes the dead ball lines, play is restarted with a
-            22-metre drop-out.
+            If the ball goes outside{" "}
+            <a className="panelLink" onClick={() => setActiveContent("pitch")}>
+              the sides of the pitch
+            </a>
+            , it is in touch, and play is restarted with a{" "}
+            <a
+              className="panelLink"
+              onClick={() => setActiveContent("lineout")}
+            >
+              lineout
+            </a>
+            .
           </p>
-          <p>A scrum is used to restart play after:</p>
+          <p>
+            If the ball passes the{" "}
+            <a className="panelLink" onClick={() => setActiveContent("pitch")}>
+              dead ball lines
+            </a>
+            , play is restarted with a{" "}
+            <a
+              className="panelLink"
+              onClick={() => setActiveContent("dropout")}
+            >
+              22-metre drop-out
+            </a>
+            .
+          </p>
+          <p>
+            A{" "}
+            <a className="panelLink" onClick={() => setActiveContent("scrum")}>
+              scrum
+            </a>{" "}
+            is used to restart play after:
+          </p>
           <ul>
-            <li>The ball has been knocked on or passed forward.</li>
-            <li>An accidental offside.</li>
-            <li>The ball is stuck (called “going dead”) in a ruck or maul.</li>
+            <li>
+              The ball has been{" "}
+              <a
+                className="panelLink"
+                onClick={() => setActiveContent("knockon")}
+              >
+                knocked on or passed forward
+              </a>
+              .
+            </li>
+            <li>
+              An{" "}
+              <a
+                className="panelLink"
+                onClick={() => setActiveContent("offside")}
+              >
+                offside infringement
+              </a>
+              .
+            </li>
+            <li>
+              The ball is unable to be retrieved from a{" "}
+              <a className="panelLink" onClick={() => setActiveContent("ruck")}>
+                ruck
+              </a>{" "}
+              or{" "}
+              <a className="panelLink" onClick={() => setActiveContent("maul")}>
+                maul
+              </a>
+              .
+            </li>
           </ul>
+          <p>
+            There are many offences during play that can result in{" "}
+            <a
+              className="panelLink"
+              onClick={() => setActiveContent("penalty")}
+            >
+              penalties and other punishments
+            </a>{" "}
+            by the referee.
+          </p>
         </div>
         <div className="viewer">
           <ViewPanel
