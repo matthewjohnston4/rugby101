@@ -6,7 +6,7 @@ import ViewPanel, { ContentType } from "./views";
 import DeskOfM from "./svgs/deskofm";
 
 export default function Home() {
-  const [activeContent, setActiveContent] = useState<ContentType>("home");
+  const [activeContent, setActiveContent] = useState<ContentType>("teams");
 
   return (
     <div className="main">
@@ -34,9 +34,9 @@ export default function Home() {
           <p>There are two periods of 40 minutes in each match.</p>
           <p>Points are scored through:</p>
           <ul>
-            <li>A try.</li>
-            <li>A conversion.</li>
-            <li>A goal kick.</li>
+            <li><a className="panelLink" onClick={() => setActiveContent("tries")}>Tries</a></li>
+            <li><a className="panelLink" onClick={() => setActiveContent("conversion")}>Conversion</a></li>
+            <li><a className="panelLink" onClick={() => setActiveContent("goalKicks")}>Goal kicks</a></li>
           </ul>
           <p>Players can run with the ball, pass it backwards, or kick it.</p>
           <p>

@@ -1,7 +1,10 @@
 import React from 'react';
 import TeamPanel from './panels/teams';
+import TriesPanel from './panels/tries';
+import ConversionsPanel from './panels/conversions';
+import DropKickPanel from './panels/dropkick';
 
-export type ContentType = 'home' | 'teams' | 'settings' | 'profile';
+export type ContentType = 'teams' | 'tries' | 'conversion' | 'goalKicks';
 
 interface ViewPanelProps {
     activeContent: ContentType;
@@ -10,10 +13,10 @@ interface ViewPanelProps {
 
 export default function ViewPanel({ activeContent, setActiveContent }: ViewPanelProps) {
     const contentMap: Record<ContentType, React.ReactNode> = {
-        home: <div className="p-4"><h2>Home</h2><p>Welcome to the home view.</p></div>,
         teams: <TeamPanel />,
-        settings: <div className="p-4"><h2>Settings</h2><p>Manage your preferences.</p></div>,
-        profile: <div className="p-4"><h2>Profile</h2><p>View your profile information.</p></div>,
+        tries: <TriesPanel />,
+        conversion: <ConversionsPanel />,
+        goalKicks: <DropKickPanel />,
     };
 
     return (

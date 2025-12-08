@@ -109,11 +109,17 @@ h1 {
   font-weight: 900;
 }
 
-.teamContent {
+.contentPanel {
   background: #568d58;
   border: 5px solid var(--foreground);
   border-radius: 2px;
   padding: 2rem;
+}
+
+.scorePanel {
+  background: var(--accent);
+  border: 0;
+  color: var(--background)
 }
 
 .pitch {
@@ -254,4 +260,9 @@ h1 {
   font-size: 1.25rem;
   text-transform: uppercase;
   font-weight: 900;
+}
+
+.kickForGoalSVG {
+  width: 100%;
+  height: auto;
 }
