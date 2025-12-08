@@ -130,10 +130,20 @@ h1 {
   position: relative;
 }
 
+.fullPitch svg {
+  border: 1px solid #fff;
+  width: 100%;
+  height: auto;
+}
+
 .pitch .segments {
   fill: #6aa76a;
   stroke: #ffffff;
   stroke-width: 2px;
+}
+
+.pitch .segments .endGoalArea {
+  fill: #558b55;
 }
 
 .pitch .markings {

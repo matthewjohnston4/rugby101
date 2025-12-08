@@ -2,11 +2,11 @@ import React from "react";
 
 export default function HalfPitch() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 680">
+    <svg className="pitchSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 680">
       <g className="segments">
         <g>
           <g>
-            <rect className="cls-2" x="1" y="501" width="698" height="178" />
+            <rect className="endGoalArea" x="1" y="501" width="698" height="178" />
             <path
               className="cls-1"
               d="M2,502h696s0,176,0,176H2s0-176,0-176M0,500v180s700,0,700,0v-180S0,500,0,500H0Z"

@@ -3,8 +3,9 @@ import TeamPanel from './panels/teams';
 import TriesPanel from './panels/tries';
 import ConversionsPanel from './panels/conversions';
 import DropKickPanel from './panels/dropkick';
+import PitchPanel from './panels/pitch';
 
-export type ContentType = 'teams' | 'tries' | 'conversion' | 'goalKicks';
+export type ContentType = 'pitch' | 'teams' | 'tries' | 'conversion' | 'goalKicks';
 
 interface ViewPanelProps {
     activeContent: ContentType;
@@ -17,6 +18,7 @@ export default function ViewPanel({ activeContent, setActiveContent }: ViewPanel
         tries: <TriesPanel />,
         conversion: <ConversionsPanel />,
         goalKicks: <DropKickPanel />,
+        pitch: <PitchPanel />,
     };
 
     return (

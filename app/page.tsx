@@ -6,7 +6,7 @@ import ViewPanel, { ContentType } from "./views";
 import DeskOfM from "./svgs/deskofm";
 
 export default function Home() {
-  const [activeContent, setActiveContent] = useState<ContentType>("teams");
+  const [activeContent, setActiveContent] = useState<ContentType>("pitch");
 
   return (
     <div className="main">
@@ -21,7 +21,7 @@ export default function Home() {
       <div className="layout">
         <div className="intro">
           <p>
-            Rugby is a game played between two{" "}
+            Rugby is a game played on <a className="panelLink" onClick={() => setActiveContent("pitch")}>a pitch</a> between two{" "}
             <a className="panelLink" onClick={() => setActiveContent("teams")}>
               teams
             </a>{" "}
@@ -31,7 +31,7 @@ export default function Home() {
             </a>
             .
           </p>
-          <p>There are two periods of 40 minutes in each match.</p>
+          <p>There are two periods of 40 minutes in each match, separated by a halftime break of 10 minutes.</p>
           <p>Points are scored through:</p>
           <ul>
             <li><a className="panelLink" onClick={() => setActiveContent("tries")}>Tries</a></li>
