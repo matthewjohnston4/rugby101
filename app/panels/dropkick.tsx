@@ -7,10 +7,16 @@ export default function DropKickPanel() {
       <h2>Goal Kicks</h2>
       <div className="description goalKickDescription">
         <KickForGoal />
-        <p>Goal kicks are worth THREE points.</p>
+        <p>Goal kicks are worth <strong>THREE</strong> points.</p>
         <p>
-          Goal kicks can be attempted in open play as a 'drop goal', or
-          attempted from the awarding of a penalty against the opposition team.
+          Goal kicks can be attempted in open play as a <strong>'drop goal'</strong>. This option
+          is high risk as opposition players can charge down a kicker from close
+          range.
+        </p>
+        <p>
+          Goal kicks are also an option after the awarding of a <strong>penalty</strong> against
+          a team. In this case the opposition team must retreat from the kicker
+          and not move while the kick is taken.
         </p>
         <p>
           In both cases the ball must pass over the crossbar and between the
