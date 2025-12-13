@@ -104,16 +104,30 @@ export default function Home() {
             .
           </p>
           <p>
-            If the ball passes the{" "}
+            If an attacking team takes the ball past the{" "}
             <a className="panelLink" onClick={() => setActiveContent("pitch")}>
-              dead ball lines
+              dead ball line
             </a>
             , play is restarted with a{" "}
             <a
               className="panelLink"
               onClick={() => setActiveContent("dropout")}
             >
-              22-metre drop-out
+              22-metre drop-out for the defending team
+            </a>
+            .
+          </p>
+          <p>
+            If a defending team takes the ball past their own{" "}
+            <a className="panelLink" onClick={() => setActiveContent("pitch")}>
+              dead ball line
+            </a>
+            , play is restarted with a{" "}
+            <a
+              className="panelLink"
+              onClick={() => setActiveContent("scrum")}
+            >
+              5 metre scrum for the attacking team
             </a>
             .
           </p>
